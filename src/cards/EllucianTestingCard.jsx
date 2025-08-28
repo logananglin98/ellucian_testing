@@ -19,7 +19,7 @@ const EllucianTestingCard = (props) => {
     return (
         <div className={classes.card}>
             <Typography variant="h2">
-                Hello EllucianTesting World
+                Hello Logan World
             </Typography>
             <Typography>
                 <span>
