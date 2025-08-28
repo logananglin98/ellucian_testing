@@ -1,7 +1,7 @@
 {
   "name": "EllucianTesting",
   "version": "1.0.0",
-  "description": "Description of EllucianTesting",
+  "description": "For testing Ellucian features and cards",
   "main": "index.js",
   "license": "UNLICENSED",
   "scripts": {

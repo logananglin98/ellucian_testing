@@ -1,6 +1,6 @@
 module.exports = {
     name: 'EllucianTesting',
-    publisher: 'Sample',
+    publisher: 'LoganAnglin',
     cards: [{
         type: 'EllucianTestingCard',
         source: './src/cards/EllucianTestingCard',
