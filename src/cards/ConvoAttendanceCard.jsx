@@ -13,28 +13,20 @@ const styles = () => ({
     }
 });
 
-const EllucianTestingCard = (props) => {
+const ConvoAttendanceCard = (props) => {
     const { classes } = props;
 
     return (
         <div className={classes.card}>
             <Typography variant="h2">
-                Hello Logan World
-            </Typography>
-            <Typography>
-                <span>
-                    For sample extensions, visit the Ellucian Developer
-                </span>
-                <TextLink href="https://github.com/ellucian-developer/experience-extension-sdk-samples" target="_blank">
-                     GitHub
-                </TextLink>
+                Convocations Attended: 
             </Typography>
         </div>
     );
 };
 
-EllucianTestingCard.propTypes = {
+ConvoAttendanceCard.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(EllucianTestingCard);
+export default withStyles(styles)(ConvoAttendanceCard);
