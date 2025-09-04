@@ -11,6 +11,9 @@ const styles = () => ({
         height: "100%",
         padding: "16px"
     },
+    text: {
+        fontWeight: "bold"
+    },
     buttonContainer: {
         display: "flex",         
         flexDirection: "column",  
@@ -41,13 +44,15 @@ const ConvoAttendanceCard = (props) => {
 
     return (
         <div className={classes.card}>
-            <Typography variant="span">
-                Convocations Attended: {convos_attended}
-            </Typography>
+            <div className={classes.text}>
+                <Typography variant="span">
+                    Convocations Attended: {convos_attended}
+                </Typography>
 
-            <Typography variant="span">
-                Convocations needed to fulfil requirement: {remaining}
-            </Typography>
+                <Typography variant="span">
+                    Convocations needed to fulfil requirement: {remaining}
+                </Typography>
+            </div>
             <div className={classes.buttonContainer}>
                 <Button className={classes.button}
                     onClick={() => {
