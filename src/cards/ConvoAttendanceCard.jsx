@@ -1,36 +1,31 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
-import { spacing40 } from '@ellucian/react-design-system/core/styles/tokens';
 import { Typography, Button } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = () => ({
     card: {
-        marginTop: 0,
-        marginRight: spacing40,
-        marginBottom: 0,
-        marginLeft: spacing40,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         height: "100%",
-        padding: "20px"
+        padding: "16px"
     },
     buttonContainer: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px"
+        display: "flex",         
+        flexDirection: "column",  
+        rowGap: "10px"            
     },
     button: {
-        marginTop: "20px",
         width: "100%",
         color: "#026bc8",
         backgroundColor: "#fff",
         borderStyle: "solid",
         borderWidth: "1px",
         borderColor: "#026bc8",
-        padding: "12px 20px",
+        padding: "8px 16px",
         cursor: "pointer",
+        textAlign: "center",
         "&:hover": {
             color: "#fff",
             backgroundColor: "#026bc8"
@@ -46,29 +41,30 @@ const ConvoAttendanceCard = (props) => {
 
     return (
         <div className={classes.card}>
-            <Typography variant="h2">
+            <Typography variant="span">
                 Convocations Attended: {convos_attended}
             </Typography>
 
-            <Typography variant="h2">
+            <Typography variant="span">
                 Convocations needed to fulfil requirement: {remaining}
             </Typography>
+            <div className={classes.buttonContainer}>
+                <Button className={classes.button}
+                    onClick={() => {
+                        window.open("https://beis14-prod-vm.berea.edu:8443/ssomanager/c/SSB?pkg=hwzkcnvo.P_Berea_ConvoList", "_blank");
+                    }}
+                >
+                    Convocations Attended
+                </Button>
 
-            <Button className={classes.button}
-                onClick={() => {
-                    window.open("https://beis14-prod-vm.berea.edu:8443/ssomanager/c/SSB?pkg=hwzkcnvo.P_Berea_ConvoList", "_blank");
-                }}
-            >
-                See what Convocations you have Attended
-            </Button>
-
-            <Button className={classes.button}
-                onClick={() => {
-                    window.open("https://www.berea.edu/convocations/", "_blank");
-                }}
-            >
-                Convocation Schedule and Information
-            </Button>
+                <Button className={classes.button}
+                    onClick={() => {
+                        window.open("https://www.berea.edu/convocations/", "_blank");
+                    }}
+                >
+                    Convocation Information
+                </Button>
+            </div>
         </div>
     );
 };
