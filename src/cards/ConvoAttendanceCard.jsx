@@ -15,11 +15,16 @@ const styles = () => ({
 
 const ConvoAttendanceCard = (props) => {
     const { classes } = props;
+    let convos_attended = 2;
+    let remaining = 7 - convos_attended; 
 
     return (
         <div className={classes.card}>
             <Typography variant="h2">
-                Convocations Attended: 
+                Convocations Attended: {convos_attended}
+            </Typography>
+            <Typography variant="h2">
+                Convocations needed to fulfil requirement: {remaining}
             </Typography>
         </div>
     );
