@@ -1,6 +1,6 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
 import { spacing40 } from '@ellucian/react-design-system/core/styles/tokens';
-import { Typography, TextLink } from '@ellucian/react-design-system/core';
+import { Typography, Button } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -23,9 +23,26 @@ const ConvoAttendanceCard = (props) => {
             <Typography variant="h2">
                 Convocations Attended: {convos_attended}
             </Typography>
+
             <Typography variant="h2">
                 Convocations needed to fulfil requirement: {remaining}
             </Typography>
+
+            <Button
+                onClick={() => {
+                    window.open("https://beis14-prod-vm.berea.edu:8443/ssomanager/c/SSB?pkg=hwzkcnvo.P_Berea_ConvoList", "_blank");
+                }}
+            >
+                See what Convocations you have Attended
+            </Button>
+
+            <Button
+                onClick={() => {
+                    window.open("https://www.berea.edu/convocations/", "_blank");
+                }}
+            >
+                Convocation Schedule and Information
+            </Button>
         </div>
     );
 };
