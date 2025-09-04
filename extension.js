@@ -1,12 +1,12 @@
 module.exports = {
-    name: 'EllucianTesting',
+    name: 'ConvoAttendance',
     publisher: 'LoganAnglin',
     cards: [{
-        type: 'EllucianTestingCard',
-        source: './src/cards/EllucianTestingCard',
-        title: 'EllucianTesting Card',
-        displayCardType: 'EllucianTesting Card',
-        description: 'This is an introductory card to the Ellucian Experience SDK',
+        type: 'ConvoAttendanceCard',
+        source: './src/cards/ConvoAttendanceCard',
+        title: 'Convocation Attendance',
+        displayCardType: 'Convocation Attendance Card',
+        description: 'This card will display how many convocations a student has attended.',
         pageRoute: {
             route: '/',
             excludeClickSelectors: ['a']
