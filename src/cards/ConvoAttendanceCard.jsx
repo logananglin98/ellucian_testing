@@ -40,7 +40,7 @@ const styles = () => ({
 const ConvoAttendanceCard = (props) => {
     const { classes } = props;
     let convos_attended = 2;
-    let remaining = 7 - convos_attended; 
+    let remaining = 6 - convos_attended; 
 
     return (
         <div className={classes.card}>
