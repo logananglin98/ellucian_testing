@@ -9,9 +9,35 @@ const styles = () => ({
         marginTop: 0,
         marginRight: spacing40,
         marginBottom: 0,
-        marginLeft: spacing40
+        marginLeft: spacing40,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
+        padding: "20px"
+    },
+    buttonContainer: {
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px"
+    },
+    button: {
+        marginTop: "20px",
+        width: "100%",
+        color: "#026bc8",
+        backgroundColor: "#fff",
+        borderStyle: "solid",
+        borderWidth: "1px",
+        borderColor: "#026bc8",
+        padding: "12px 20px",
+        cursor: "pointer",
+        "&:hover": {
+            color: "#fff",
+            backgroundColor: "#026bc8"
+        }
     }
 });
+
 
 const ConvoAttendanceCard = (props) => {
     const { classes } = props;
@@ -28,7 +54,7 @@ const ConvoAttendanceCard = (props) => {
                 Convocations needed to fulfil requirement: {remaining}
             </Typography>
 
-            <Button
+            <Button className={classes.button}
                 onClick={() => {
                     window.open("https://beis14-prod-vm.berea.edu:8443/ssomanager/c/SSB?pkg=hwzkcnvo.P_Berea_ConvoList", "_blank");
                 }}
@@ -36,7 +62,7 @@ const ConvoAttendanceCard = (props) => {
                 See what Convocations you have Attended
             </Button>
 
-            <Button
+            <Button className={classes.button}
                 onClick={() => {
                     window.open("https://www.berea.edu/convocations/", "_blank");
                 }}
