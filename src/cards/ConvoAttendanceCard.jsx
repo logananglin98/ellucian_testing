@@ -1,7 +1,7 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
 import { Typography, Button } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const styles = () => ({
     card: {
@@ -36,10 +36,29 @@ const styles = () => ({
     }
 });
 
-
 const ConvoAttendanceCard = (props) => {
     const { classes } = props;
-    let convos_attended = 2;
+
+    // state for temperature
+    const [temp, setTemp] = useState(null);
+
+    useEffect(() => {
+        const API_KEY = "e0a6329dce0040b9b86182344250909";
+        const CITY = "40403";
+        const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${CITY}&aqi=no`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setTemp(data.current.temp_f); 
+            })
+            .catch(() => {
+                setTemp("N/A"); 
+            });
+    }, []); // runs once after mount
+
+    // use weather data as convos_attended
+    let convos_attended = temp ?? 0; 
     let remaining = 6 - convos_attended; 
 
     return (
