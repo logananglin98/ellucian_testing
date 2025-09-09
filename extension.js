@@ -1,12 +1,12 @@
 module.exports = {
-    name: 'EllucianTesting',
+    name: 'WeatherAPITestCard',
     publisher: 'LoganAnglin',
     cards: [{
-        type: 'EllucianTestingCard',
-        source: './src/cards/EllucianTestingCard',
-        title: 'EllucianTesting Card',
-        displayCardType: 'EllucianTesting Card',
-        description: 'This is an introductory card to the Ellucian Experience SDK',
+        type: 'WeatherAPITestCard',
+        source: './src/cards/WeatherAPITestCard',
+        title: 'Weather API Test Card',
+        displayCardType: 'Weather API Test Card',
+        description: 'For testing API calls',
         pageRoute: {
             route: '/',
             excludeClickSelectors: ['a']
