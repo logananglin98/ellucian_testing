@@ -60,6 +60,9 @@ const ConvoAttendanceCard = (props) => {
     // use weather data as convos_attended
     let convos_attended = temp ?? 0; 
     let remaining = 6 - convos_attended; 
+    if (remaining <= 0) {
+        remaining = "0, Requirement fulfilled"
+    }
 
     return (
         <div className={classes.card}>
