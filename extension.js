@@ -7,12 +7,12 @@ module.exports = {
         title: 'Convocation Attendance',
         displayCardType: 'Convocation Attendance Card',
         description: 'This card will display how many convocations a student has attended.',
-        pageRoute: {
-            route: '/',
-            excludeClickSelectors: ['a']
-        }
+        // pageRoute: {
+        //     route: '/',
+        //     excludeClickSelectors: ['a']
+        // }
     }],
-    page: {
-        source: './src/page/router.jsx'
-    }
+    // page: {
+    //     source: './src/page/router.jsx'
+    // }
 };
