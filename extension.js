@@ -1,12 +1,12 @@
 module.exports = {
-    name: 'EllucianTesting',
+    name: 'WritingResourcesCArd',
     publisher: 'LoganAnglin',
     cards: [{
-        type: 'EllucianTestingCard',
-        source: './src/cards/EllucianTestingCard',
-        title: 'EllucianTesting Card',
-        displayCardType: 'EllucianTesting Card',
-        description: 'This is an introductory card to the Ellucian Experience SDK',
+        type: 'WritingResourcesCard',
+        source: './src/cards/WritingResourcesCard',
+        title: 'Writing Resources Card',
+        displayCardType: 'Writing Resources',
+        description: 'This card has links to parts of the Writing Resources site.',
         pageRoute: {
             route: '/',
             excludeClickSelectors: ['a']
