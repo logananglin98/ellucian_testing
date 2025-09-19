@@ -1,5 +1,5 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
-import { Button, Typography } from '@ellucian/react-design-system/core';
+import { Typography } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
 import CTL from "../images/CTL.png";
 import React from 'react';
@@ -23,32 +23,35 @@ const styles = () => ({
         }
     },
     text: {
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginBottom: "10px"
     },
-    buttonContainer: {
-        display: "flex",         
-        flexDirection: "column",  
-        rowGap: "10px"            
-    },
-    button: {
-        width: "100%",
-        color: "#026bc8",
-        backgroundColor: "#fff",
-        borderStyle: "solid",
-        borderWidth: "1px",
-        borderColor: "#026bc8",
-        padding: "8px 16px",
-        cursor: "pointer",
+    dropdown: {
         textAlign: "center",
+        width: "100%",
+        padding: "8px 16px",
+        border: "1px solid #026bc8",
+        borderRadius: "5px",
+        backgroundColor: "#fff",
+        color: "#026bc8",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
         "&:hover": {
-            color: "#fff",
-            backgroundColor: "#026bc8"
+            backgroundColor: "#026bc8",
+            color: "#fff"
         }
     }
 });
 
 const WritingResourcesCard = (props) => {
     const { classes } = props;
+
+    const handleSelectChange = (event) => {
+        const url = event.target.value;
+        if (url) {
+            window.open(url, "_blank");
+        }
+    };
 
     return (
         <div className={classes.card}>
@@ -57,24 +60,17 @@ const WritingResourcesCard = (props) => {
                     <img src={CTL} alt="Berea College Center for Teaching and Learning" />
                 </a>
             </div>
-            <Typography>
-                <span>
-                    Need assistance with class or personal writing? Writing Resources, the college’s writing center, can assist you with all stages of the writing process.
-                </span>
+
+            <Typography className={classes.text}>
+                Need assistance with class or personal writing? Writing Resources, the college’s writing center, can assist you with all stages of the writing process.
             </Typography>
 
-            <Button className={classes.button} onClick={() => window.open("https://berea.mywconline.com/index.php?msgLOG=YEs")}>
-                Schedule a Writing Consultation
-            </Button>
-
-            <Button className={classes.button} onClick={() => window.open("https://www.berea.edu/centers/center-for-teaching-and-learning/writing-resources")}>
-                About Writing Resources
-            </Button>
-
-            <Button className={classes.button} onClick={() => window.open("https://www.berea.edu/disability-and-accessibility-services")}>
-                Recieve Accomodations for Disability
-            </Button>
-
+            <select className={classes.dropdown} defaultValue="" onChange={handleSelectChange}>
+                <option value="" disabled>Available Resources</option>
+                <option value="https://berea.mywconline.com/index.php?msgLOG=YEs">Schedule a Writing Consultation</option>
+                <option value="https://www.berea.edu/centers/center-for-teaching-and-learning/writing-resources">About Writing Resources</option>
+                <option value="https://www.berea.edu/disability-and-accessibility-services">Receive Accommodations for Disability</option>
+            </select>
         </div>
     );
 };
