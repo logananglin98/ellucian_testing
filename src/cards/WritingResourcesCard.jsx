@@ -1,11 +1,12 @@
+import React, { useState } from 'react';
 import { withStyles } from '@ellucian/react-design-system/core/styles';
 import { Typography } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
 import CTL from "../images/CTL.png";
-import React from 'react';
 
 const styles = () => ({
     card: {
+        fontFamily: "'Proxima Nova', 'Proxima Nova Condensed', sans-serif",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -28,6 +29,8 @@ const styles = () => ({
     },
     dropdown: {
         textAlign: "center",
+        fontWeight: "bold",
+        fontSize: "16px",
         width: "100%",
         padding: "8px 16px",
         border: "1px solid #026bc8",
@@ -45,9 +48,17 @@ const styles = () => ({
 
 const WritingResourcesCard = (props) => {
     const { classes } = props;
+    const [selected, setSelected] = useState("");
+
+    const options = [
+        { label: "Schedule a Writing Consultation", url: "https://berea.mywconline.com/index.php?msgLOG=YEs" },
+        { label: "About Writing Resources", url: "https://www.berea.edu/centers/center-for-teaching-and-learning/writing-resources" },
+        { label: "Receive Accommodations for Disability", url: "https://www.berea.edu/disability-and-accessibility-services" },
+    ];
 
     const handleSelectChange = (event) => {
         const url = event.target.value;
+        setSelected(""); // Reset selection so the label stays "Select an option"
         if (url) {
             window.open(url, "_blank");
         }
@@ -65,11 +76,19 @@ const WritingResourcesCard = (props) => {
                 Need assistance with class or personal writing? Writing Resources, the college’s writing center, can assist you with all stages of the writing process.
             </Typography>
 
-            <select className={classes.dropdown} defaultValue="" onChange={handleSelectChange}>
-                <option value="" disabled>Available Resources</option>
-                <option value="https://berea.mywconline.com/index.php?msgLOG=YEs">Schedule a Writing Consultation</option>
-                <option value="https://www.berea.edu/centers/center-for-teaching-and-learning/writing-resources">About Writing Resources</option>
-                <option value="https://www.berea.edu/disability-and-accessibility-services">Receive Accommodations for Disability</option>
+            <select
+                className={classes.dropdown}
+                value={selected}
+                onChange={handleSelectChange}
+            >
+                <option value="" hidden>
+                    AVAILABLE RESOURCES
+                </option>
+                {options.map((opt, idx) => (
+                    <option key={idx} value={opt.url}>
+                        {opt.label}
+                    </option>
+                ))}
             </select>
         </div>
     );
