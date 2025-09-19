@@ -17,8 +17,6 @@ const styles = () => ({
         justifyContent: "center",
         height: "auto",
         transform: "scale(1.1)",
-        paddingTop: "16px",
-        paddingBottom: "4px",
         transition: "background-color 0.3s",
         "&:hover": {
             backgroundColor: "#026bc8"
@@ -64,7 +62,19 @@ const WritingResourcesCard = (props) => {
                     Need assistance with class or personal writing? Writing Resources, the college’s writing center, can assist you with all stages of the writing process.
                 </span>
             </Typography>
-            <Button className={classes.button} onClick={() => window.open("https://berea.mywconline.com/index.php?msgLOG=YEs")}>Schedule a Writing Consultation</Button>
+
+            <Button className={classes.button} onClick={() => window.open("https://berea.mywconline.com/index.php?msgLOG=YEs")}>
+                Schedule a Writing Consultation
+            </Button>
+
+            <Button className={classes.button} onClick={() => window.open("https://www.berea.edu/centers/center-for-teaching-and-learning/writing-resources")}>
+                About Writing Resources
+            </Button>
+
+            <Button className={classes.button} onClick={() => window.open("https://www.berea.edu/disability-and-accessibility-services")}>
+                Recieve Accomodations for Disability
+            </Button>
+
         </div>
     );
 };
