@@ -7,12 +7,12 @@ module.exports = {
         title: 'Writing Resources Card',
         displayCardType: 'Writing Resources',
         description: 'This card has links to parts of the Writing Resources site.',
-        pageRoute: {
-            route: '/',
-            excludeClickSelectors: ['a']
-        }
+        // pageRoute: {
+        //     route: '/',
+        //     excludeClickSelectors: ['a']
+        // }
     }],
-    page: {
-        source: './src/page/router.jsx'
-    }
+    // page: {
+    //     source: './src/page/router.jsx'
+    // }
 };

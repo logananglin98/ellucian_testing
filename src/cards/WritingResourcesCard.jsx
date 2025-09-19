@@ -1,5 +1,5 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
-import { Typography, TextLink } from '@ellucian/react-design-system/core';
+import { Button, Typography } from '@ellucian/react-design-system/core';
 import PropTypes from 'prop-types';
 import CTL from "../images/CTL.png";
 import React from 'react';
@@ -11,6 +11,18 @@ const styles = () => ({
         justifyContent: "space-between",
         height: "100%",
         padding: "16px"
+    },
+    image: {
+        display: "flex",
+        justifyContent: "center",
+        height: "auto",
+        transform: "scale(1.1)",
+        paddingTop: "16px",
+        paddingBottom: "4px",
+        transition: "background-color 0.3s",
+        "&:hover": {
+            backgroundColor: "#026bc8"
+        }
     },
     text: {
         fontWeight: "bold"
@@ -42,20 +54,17 @@ const WritingResourcesCard = (props) => {
 
     return (
         <div className={classes.card}>
-            <div className={classes.banner}>
-                <img src={CTL} alt="Berea College Center for Teaching and Learning" />
+            <div className={classes.image}>
+                <a href="https://www.berea.edu/centers/center-for-teaching-and-learning" target="_blank" rel="noopener noreferrer">
+                    <img src={CTL} alt="Berea College Center for Teaching and Learning" />
+                </a>
             </div>
-            <Typography variant="h2">
-                Writing Resources
-            </Typography>
             <Typography>
                 <span>
-                    For sample extensions, visit the Ellucian Developer
+                    Need assistance with class or personal writing? Writing Resources, the college’s writing center, can assist you with all stages of the writing process.
                 </span>
-                <TextLink href="https://github.com/ellucian-developer/experience-extension-sdk-samples" target="_blank">
-                     GitHub
-                </TextLink>
             </Typography>
+            <Button className={classes.button} onClick={() => window.open("https://berea.mywconline.com/index.php?msgLOG=YEs")}>Schedule a Writing Consultation</Button>
         </div>
     );
 };
