@@ -15,6 +15,7 @@ const styles = () => ({
     },
     image: {
         display: "flex",
+        paddingTop: "4px",
         justifyContent: "center",
         height: "auto",
         transform: "scale(1.1)",
